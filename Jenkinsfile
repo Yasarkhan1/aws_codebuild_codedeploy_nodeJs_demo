@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    tools {nodejs "node16" }
+    tools {nodejs "node17" }
     environment {
         NODE_ENV='production'
     }
@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('source') {
             steps {
-               git 'https://github.com/sd031/aws_codebuild_codedeploy_nodeJs_demo.git'
+               git 'https://github.com/Yasarkhan1/aws_codebuild_codedeploy_nodeJs_demo.git'
                sh 'cat index.js'
             }
             
@@ -23,10 +23,10 @@ pipeline {
             
             steps {
              echo NODE_ENV
-             withCredentials([string(credentialsId: 'e8f8ff88-49e0-433a-928d-36a518cd30d6', variable: 'secver')]) {
-                // some block
-                echo secver
-            }
+             withCredentials([string(credentialsId: 'f62a3661-1e55-4acf-9064-9ec983b6d846', variable: 'server')]) {
+           // some block
+          }
+           
                          sh 'npm install'
             }
             
