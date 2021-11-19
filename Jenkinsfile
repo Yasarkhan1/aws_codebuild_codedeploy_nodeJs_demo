@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    tools {nodejs "node17" }
+    tools {nodejs "node16" }
     environment {
         NODE_ENV='production'
     }
